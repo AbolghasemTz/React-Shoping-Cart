@@ -1,28 +1,17 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
-
-let url = new URL("https://api.punkapi.com/v2/beers?page=2&per_page=6");
-
-export const getOurProducts = createAsyncThunk(
-  "products/getProducts",
-  async (_, { rejectWithValue }) => {
-    try {
-      const response = await axios.get(url);
-
-      return response.data;
-    } catch (error) {
-      return rejectWithValue([], error.message);
-    }
-  }
-);
-
-let urls = new URL("https://api.punkapi.com/v2/beers");
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
+import { apiCfg } from './../utils/constants/api.constants';
 
 export const getProducts = createAsyncThunk(
-  "products/getProducts",
-  async (_, { rejectWithValue }) => {
+  'products/getProducts',
+  async (reqCfg, { rejectWithValue }) => {
     try {
-      const response = await axios.get(urls);
+      const url = new URL(apiCfg.baseURL);
+
+      Object.entries(reqCfg).forEach(entry => {
+        url.searchParams.set(entry[0], entry[1]);
+      });
+      const response = await axios.get(url);
 
       return response.data;
     } catch (error) {
