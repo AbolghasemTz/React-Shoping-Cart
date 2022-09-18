@@ -3,7 +3,7 @@ import Client from "../components/home/Client";
 import Menu from "../components/home/Menu";
 import Category from "../components/home/Category";
 import Quality from "../components/home/Quality";
-import OurProducts from "../components/products/OurProduct/OurProducts";
+import OurProducts from "../components/products/ProductHome/ProductsHome";
 
 const HomePage = () => {
   return (

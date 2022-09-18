@@ -1,5 +1,5 @@
 import React from "react";
-import { checkInCart } from "../../utils/checkInCart";
+import { checkInCart } from "../../utils/helpers/helpers";
 import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 
 const ProductsItem = ({ product, cart }) => {

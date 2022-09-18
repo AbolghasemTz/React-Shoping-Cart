@@ -1,13 +1,13 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { getProducts } from '../../services/getProdtucts';
+import { createSlice } from "@reduxjs/toolkit";
+import { getProducts } from "../../services/getProducts";
 
 const initialState = {
   products: [],
   loading: false,
-  error: '',
+  error: "",
 };
 const ProductSlice = createSlice({
-  name: 'products',
+  name: "products",
   initialState,
   reducers: {},
   extraReducers: {
@@ -16,14 +16,14 @@ const ProductSlice = createSlice({
         ...state,
         products: action.payload,
         loading: false,
-        error: '',
+        error: "",
       };
     },
     [getProducts.pending]: (state, action) => {
       return {
         products: [],
         loading: true,
-        error: '',
+        error: "",
       };
     },
     [getProducts.rejected]: (state, action) => {

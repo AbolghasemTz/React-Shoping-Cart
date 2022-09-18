@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import footerImage from "../assets/images/footer.webp";
+import footerImage from "../../assets/images/footer.webp";
 import { FaInstagram, FaTelegram, FaLinkedinIn } from "react-icons/fa";
 
 const Footer = () => {

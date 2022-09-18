@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import ProductsItem from "../../components/products/ProductsItem";
-import { addToCart } from "../../features/Products/CartSlice";
+import { addToCart } from "../../store/Products/CartSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { checkInCart } from "../../utils/checkInCart";
-import { notify } from "../toastify/tostify";
+import { checkInCart } from "../../utils/helpers/helpers";
+import { notify } from "../../utils/tostify";
 
 const Product = ({ product }) => {
   const { cart } = useSelector((state) => state.CartState);
@@ -21,7 +21,7 @@ const Product = ({ product }) => {
           {checkInCart(cart, product.id) ? (
             <Link
               className="bg-gray-200 px-4 py-2 rounded-full hover:bg-green-600 w-full
-hover:text-white text-xs font-bold transition-all duration-300 ease-linear border-none outline-none"
+            hover:text-white text-xs font-bold transition-all duration-300 ease-linear border-none outline-none"
               to="/cart"
             >
               Check In Cart

@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../../../features/Products/CartSlice";
+import { addToCart } from "../../../store/Products/CartSlice";
 import { Link } from "react-router-dom";
-import { checkInCart } from "../../../utils/checkInCart";
+import { checkInCart } from "../../../utils/helpers/helpers";
 import ProductsItem from "../ProductsItem";
-import { notify } from "../../toastify/tostify";
+import { notify } from "../../../utils/tostify";
 import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 
-const OurProduct = ({ product }) => {
+const ProductHome = ({ product }) => {
   const { cart } = useSelector((state) => state.CartState);
   const dispatch = useDispatch();
 
@@ -48,4 +48,4 @@ const OurProduct = ({ product }) => {
   );
 };
 
-export default OurProduct;
+export default ProductHome;

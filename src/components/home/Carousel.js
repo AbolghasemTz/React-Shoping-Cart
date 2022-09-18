@@ -1,5 +1,5 @@
-import one from "../../assets/images/banneb.jpg";
-import two from "../../assets/images/ber4.jpg";
+import firstPic from "../../assets/images/banneb.jpg";
+import secondPic from "../../assets/images/ber4.jpg";
 const Carousel = () => {
   return (
     <div
@@ -31,7 +31,7 @@ const Carousel = () => {
       </div>
       <div className="carousel-inner relative w-full overflow-hidden">
         <div className="carousel-item active relative float-left w-full">
-          <img src={one} className="block md:h-[400px] w-full" alt="..." />
+          <img src={firstPic} className="block md:h-[400px] w-full" alt="..." />
           <div className="carousel-caption hidden md:block absolute text-center">
             <h5 className="text-3xl text-gray-200 font-bold">
               Pure Water Quality
@@ -42,7 +42,11 @@ const Carousel = () => {
           </div>
         </div>
         <div className="carousel-item relative float-left w-full">
-          <img src={two} className="block md:h-[400px] w-full" alt="..." />
+          <img
+            src={secondPic}
+            className="block md:h-[400px] w-full"
+            alt="..."
+          />
           <div className="carousel-caption hidden md:block absolute text-center">
             <h5 className="text-3xl text-gray-200 font-bold">
               Pure Water Quality

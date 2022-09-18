@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FaShoppingBasket } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import logo from "../assets/images/logo.jpg";
+import logo from "../../assets/images/logo.jpg";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { cart } = useSelector((state) => state.CartState);
@@ -11,7 +11,7 @@ const Header = () => {
     <>
       <nav className="bg-green-500 border-gray-200 px-2 z-40  md:px-4 py-4 shadow-sm fixed right-0 top-0 w-full">
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-          <Link to="https://flowbite.com" className="flex items-center">
+          <Link to="/" className="flex items-center">
             <span className="self-center text-orange-500 text-xl font-semibold whitespace-nowrap dark:text-white">
               <img
                 src={logo}
@@ -22,7 +22,7 @@ const Header = () => {
           </Link>
           <div className="flex items-center md:order-2">
             <Link
-              to="#"
+              to="/login"
               className="text-white hover:bg-gray-50 hover:text-gray-600 focus:ring-3 focus:ring-gray-300 font-sm rounded-lg text-md px-2 py-1 md:px-4 md:py-2 mr-1 md:mr-2 focus:outline-none transition-all duration-300"
             >
               Login

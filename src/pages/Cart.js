@@ -1,12 +1,13 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
-import { shorten } from "../utils/shortenTitle";
+import { shorten } from "../utils/helpers/shortenTitle";
 import { BiTrash } from "react-icons/bi";
-import { addToCart, decrement, remove } from "../features/Products/CartSlice";
+import { addToCart, decrement, remove } from "../store/Products/CartSlice";
 
 const Cart = () => {
   const { cart, total } = useSelector((state) => state.CartState);
+
   const dispatch = useDispatch();
   const incHandler = (item) => {
     dispatch(addToCart(item));
@@ -17,7 +18,7 @@ const Cart = () => {
   const deleteHandler = (item) => {
     dispatch(remove(item));
   };
-  console.log(cart);
+
   const emptyCart = () => {
     if (!cart.length) {
       return (
@@ -35,6 +36,7 @@ const Cart = () => {
       );
     }
   };
+
   return (
     <div className=" bg-gray-50 min-h-screen">
       <div className="pt-36 max-w-screen-xl mx-auto">
@@ -138,7 +140,7 @@ const CartPrice = ({ cart, total }) => {
         </div>
         <div className="flex items-center justify-center px-2">
           <Link
-            to="/checkout"
+            to={`/signup?redirect=checkout`}
             className="bg-gray-200 mt-4 px-6 py-3 text-sm font-bold hover:bg-green-800 rounded-md hover:text-white transition-all duration-300"
           >
             CHECKOUT
